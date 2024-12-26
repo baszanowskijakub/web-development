@@ -1,12 +1,40 @@
-# web-development
-Web development course that I am taking. It is called "The Complete 2024 Web Development Bootcamp" by Angela Yu. This repository has been created to help me track progress and easily transition between various devices while still having access to my previous work.
+# Web Development Course
+This repository contains my progress through "The Complete 2024 Web Development Bootcamp" by Angela Yu. It serves as both a learning tracker and helps me maintain consistent access between different devices.
 
-# NodeJS
-Some projects in this repository require Node.js. For those specific projects:
-- Installation: Node.js must be installed on your system
-- Dependencies: Run `npm install` in the project directory to install required dependencies
-- Environment: Ensure you're in the correct project directory when running npm commands
+## Repository Structure
 
-To verify your installation:
-1. Check Node.js: `node --version`
-2. Check npm: `npm --version`
+### 📁 Capstone Projects
+This folder contains practical projects that I build after completing specific sections of the course. Each project helps me reinforce the concepts that I learned in the course modules.
+
+### 📁 Course
+The course material which contains Frontend and Backend sections:
+
+#### Frontend Development 
+Modules focused on client-side web development, teaching fundamentals like HTML, CSS and JavaScript.
+
+#### Backend Development
+Modules focused on server-side programming using technologies like Node.js and Express.
+
+## Technical Requirements
+
+Some projects in this repository require Node.js. For those that do:
+
+### Prerequisites
+- Node.js installed on your system 
+- npm (Node Package Manager)
+
+### Setup Instructions
+1. Verify your installation:
+```bash
+node --version
+npm --version
+2. For projects requiring dependencies:
+```bash
+cd [project-directory]
+npm install
+
+## Course Information
+This repository follows "The Complete 2024 Web Development Bootcamp" by Angela Yu. The course covers both frontend and backend web development skills.
+
+---
+*Note: This repository is continuously updated as I progress through the course.*
