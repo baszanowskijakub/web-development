@@ -28,11 +28,13 @@ Some projects in this repository require Node.js. For those that do:
 ```bash
 node --version
 npm --version
+```
+
 2. For projects requiring dependencies:
 ```bash
 cd [project-directory]
 npm install
-
+```
 ## Course Information
 This repository follows "The Complete 2024 Web Development Bootcamp" by Angela Yu. The course covers both frontend and backend web development skills.
 
