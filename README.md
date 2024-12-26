@@ -1,6 +1,8 @@
 # Web Development Course
 This repository contains my progress through "The Complete 2024 Web Development Bootcamp" by Angela Yu. It serves as both a learning tracker and helps me maintain consistent access between different devices.
 
+*Note: This repository is continuously updated as I progress through the course.*
+
 ## Repository Structure
 
 ### 📁 Capstone Projects
@@ -35,8 +37,3 @@ npm --version
 cd [project-directory]
 npm install
 ```
-## Course Information
-This repository follows "The Complete 2024 Web Development Bootcamp" by Angela Yu. The course covers both frontend and backend web development skills.
-
----
-*Note: This repository is continuously updated as I progress through the course.*
