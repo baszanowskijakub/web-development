@@ -11,10 +11,10 @@ This folder contains practical projects that I build after completing specific s
 ### 📁 Course
 The course material which contains Frontend and Backend sections:
 
-#### Frontend Development 
+#### 📁 Frontend
 Modules focused on client-side web development, teaching fundamentals like HTML, CSS and JavaScript.
 
-#### Backend Development
+#### 📁 Backend
 Modules focused on server-side programming using technologies like Node.js and Express.
 
 ## Technical Requirements
