@@ -6,7 +6,7 @@ This repository contains my progress through "The Complete 2024 Web Development 
 ## Repository Structure
 
 ### 📁 Capstone Projects
-This folder contains practical projects that I build after completing specific sections of the course. Each project helps me reinforce the concepts that I learned in the course modules.
+This folder contains practical projects that I build after completing specific sections of the course. Each project helps me reinforce the concepts that I learned in the course modules. In the 📁 Other folder you can find some side project that I've built outside the course.
 
 ### 📁 Course
 The course material which contains Frontend and Backend sections:
