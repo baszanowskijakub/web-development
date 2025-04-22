@@ -1,12 +1,12 @@
 # Web Development Course
-This repository contains my progress through "The Complete 2024 Web Development Bootcamp" by Angela Yu. It serves as both a learning tracker and helps me maintain consistent access between different devices.
+This repository contains my progress through "The Complete 2024 Web Development Bootcamp" by Angela Yu and freeCodeCamp.org course "JavaScript Algorithms and Data Structures". It serves as both a learning tracker and helps me maintain consistent access between different devices.
 
 *Note: This repository is continuously updated as I progress through the course.*
 
 ## Repository Structure
 
 ### 📁 Capstone Projects
-This folder contains practical projects that I build after completing specific sections of the course. Each project helps me reinforce the concepts that I learned in the course modules. In the 📁 Other folder you can find some side project that I've built outside the course.
+This folder contains practical projects that I build after completing specific sections of the course. Each project helps me reinforce the concepts that I learned in the course modules. In the 📁 Other folder you can find some side project that I've built outside the course, mainly from the freeCodeCamp.org course.
 
 ### 📁 Course
 The course material which contains Frontend and Backend sections:
