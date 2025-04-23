@@ -1,0 +1,179 @@
+:root {
+  --primary: #1e293b;
+  --secondary: #0ea5e9;
+  --accent: #f43f5e;
+  --background: #f8fafc;
+  --card-bg: #ffffff;
+  --text-dark: #334155;
+  --text-light: #f8fafc;
+  --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --transition: all 0.3s ease;
+  --border-radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-dark);
+  padding: 20px;
+  max-width: 1440px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.title {
+  color: var(--primary);
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 2rem 0;
+  text-align: center;
+  letter-spacing: -0.025em;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-stats {
+  background-color: var(--primary);
+  color: var(--text-light);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.team-stats p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.team-stats span {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  color: var(--secondary);
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.options-label {
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+#players {
+  background-color: var(--card-bg);
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: var(--text-dark);
+  outline: none;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+#players:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.3);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.player-card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+}
+
+.player-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.player-card h2 {
+  background-color: var(--primary);
+  color: var(--text-light);
+  padding: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.player-card p {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.player-card p:last-child {
+  border-bottom: none;
+}
+
+.player-card p::before {
+  content: attr(data-label);
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Captain styling */
+.player-card.captain h2 {
+  background-color: var(--accent);
+  position: relative;
+}
+
+footer {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .team-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .team-stats p {
+    margin-bottom: 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .cards {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
