@@ -1,0 +1,130 @@
+:root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --success: #10b981;
+    --error: #ef4444;
+    --background: #f9fafb;
+    --card: #ffffff;
+    --text: #1f2937;
+    --text-light: #6b7280;
+    --border: #e5e7eb;
+    --shadow: rgba(0, 0, 0, 0.1);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--background);
+    padding: 20px;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--card);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px var(--shadow);
+    padding: 32px;
+    text-align: center;
+  }
+  
+  h1 {
+    color: var(--text);
+    margin-bottom: 24px;
+    font-size: 28px;
+  }
+  
+  p {
+    color: var(--text-light);
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .input-group {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 8px;
+  }
+  
+  #text-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.2s ease;
+  }
+  
+  #text-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  }
+  
+  #check-btn {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  #check-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+  }
+  
+  #check-btn:active {
+    transform: translateY(1px);
+  }
+  
+  #result {
+    display: block;
+    margin-top: 20px;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    min-height: 60px;
+  }
+  
+  .palindrome {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--success);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+  }
+  
+  .not-palindrome {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--error);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      padding: 20px;
+    }
+    
+    .input-group {
+      flex-direction: column;
+    }
+    
+    #check-btn {
+      width: 100%;
+    }
+  }
