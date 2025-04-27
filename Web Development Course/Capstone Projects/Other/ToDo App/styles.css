@@ -1,0 +1,294 @@
+:root {
+    --primary-green: #4caf50;
+    --light-green: #81c784;
+    --dark-green: #2e7d32;
+    --white: #ffffff;
+    --light-grey: #f8f9fa;
+    --dark-grey: #1e2a38;
+    --light-text: #f5f5f5;
+    --dark-text: #212121;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background-color: #f0f7f4;
+    background-image: linear-gradient(135deg, #f0f7f4 0%, #e8f5e9 100%);
+    color: var(--dark-text);
+    line-height: 1.6;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+  
+  h1 {
+    color: var(--dark-green);
+    margin: 20px 0 30px 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  h1::after {
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary-green), var(--light-green));
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+  }
+  
+  .todo-app {
+    background-color: var(--white);
+    width: 100%;
+    max-width: 450px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: auto;
+    min-height: 450px;
+  }
+  
+  .btn {
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    color: var(--white);
+    background-color: var(--primary-green);
+    background-image: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn:hover {
+    background-image: linear-gradient(135deg, var(--dark-green), #1b5e20);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .btn:active {
+    transform: translateY(0);
+  }
+  
+  .large-btn {
+    width: 80%;
+    font-size: 1.1rem;
+    padding: 12px;
+    align-self: center;
+  }
+  
+  .close-task-form-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .close-task-form-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  .close-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .task-form {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 25px;
+    width: 90%;
+    max-width: 450px;
+    height: auto;
+    max-height: 90vh;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+  }
+  
+  .task-form-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+  }
+  
+  .task-form-body {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+  }
+  
+  .task-form-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  
+  .task-form-label {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark-green);
+  }
+  
+  #title-input,
+  #date-input,
+  #description-input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition);
+  }
+  
+  #title-input:focus,
+  #date-input:focus,
+  #description-input:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+  }
+  
+  #confirm-close-dialog {
+    padding: 20px;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  #confirm-close-dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .confirm-close-dialog-btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .discard-message-text {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--dark-text);
+    text-align: center;
+  }
+  
+  #tasks-container {
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 5px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  #tasks-container::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  #tasks-container::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border-radius: 10px;
+  }
+  
+  #tasks-container::-webkit-scrollbar-thumb {
+    background: var(--light-green);
+    border-radius: 10px;
+  }
+  
+  .task {
+    background-color: var(--light-grey);
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    border-left: 4px solid var(--primary-green);
+  }
+  
+  .task:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+  }
+  
+  .task p {
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+  
+  .task p:last-of-type {
+    margin-bottom: 15px;
+  }
+  
+  .task p strong {
+    color: var(--dark-green);
+    font-weight: 600;
+  }
+  
+  .task .btn {
+    margin: 0 5px;
+    padding: 8px 15px;
+    font-size: 0.95rem;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  @media (max-width: 480px) {
+    .todo-app,
+    .task-form {
+      width: 95%;
+      border-radius: 10px;
+      padding: 20px;
+    }
+    
+    h1 {
+      font-size: 2rem;
+    }
+    
+    .task-form-label {
+      font-size: 1rem;
+    }
+    
+    .btn {
+      padding: 8px 12px;
+      font-size: 0.95rem;
+    }
+  }
