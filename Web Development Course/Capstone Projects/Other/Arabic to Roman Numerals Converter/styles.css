@@ -129,6 +129,25 @@
     text-shadow: 0 0 5px var(--neon-purple);
   }
   
+  .result {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .fun-fact {
+    font-size: 0.9rem;
+    color: #e0b0ff;
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px dashed var(--neon-blue);
+    border-radius: 5px;
+    background-color: rgba(184, 41, 255, 0.1);
+    animation: fadeIn 0.8s ease-out forwards;
+    line-height: 1.5;
+    text-shadow: none;
+  }
+  
   @keyframes borderPulse {
     0% {
       box-shadow: 0 0 5px var(--neon-purple), 0 0 15px var(--neon-blue);

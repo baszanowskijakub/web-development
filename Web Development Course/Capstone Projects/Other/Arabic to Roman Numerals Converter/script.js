@@ -18,6 +18,11 @@ const romanNumerals = [
 ];
 
 const convertNumbers = (input) => {
+  // Special case for zero
+  if (input === 0) {
+    return "N"; // Using "N" for "nulla" (none) as the modern convention for zero
+  }
+  
   let num = input;
   let result = "";
   romanNumerals.forEach(
@@ -32,15 +37,23 @@ const convertNumbers = (input) => {
 }
 
 convertButton.addEventListener("click", () => {
-  if (!numberInput.value){
+  if (numberInput.value === "") {
     outputEl.innerText = "Please enter a valid number"
   } else if (numberInput.value < 0) {
-    outputEl.innerText = "Please enter a number greater than or equal to 1"
-  } else if  (numberInput.value >= 4000){
+    outputEl.innerText = "Please enter a number greater than or equal to 0"
+  } else if (numberInput.value >= 4000) {
     outputEl.innerText = "Please enter a number less than or equal to 3999"
   } else {
-    const result = convertNumbers(parseInt(numberInput.value));
-    outputEl.innerText = result;
+    const num = parseInt(numberInput.value);
+    const result = convertNumbers(num);
+    
+    if (num === 0) {
+      outputEl.innerHTML = `<span class="result">${result}</span>
+                           <div class="fun-fact">Fun fact: Romans didn't have a symbol for zero! 
+                           Modern conventions use "N" from "nulla" (meaning "none") 
+                           to represent zero in Roman numerals.</div>`;
+    } else {
+      outputEl.innerHTML = `<span class="result">${result}</span>`;
+    }
   }
 });
-
