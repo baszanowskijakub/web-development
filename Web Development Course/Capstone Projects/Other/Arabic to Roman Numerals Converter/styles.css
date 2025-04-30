@@ -1,0 +1,168 @@
+:root {
+    --neon-purple: #b829ff;
+    --neon-blue: #7b2cff;
+    --dark-bg: #0a0a0f;
+    --text-glow: 0 0 7px #b829ff, 0 0 10px #b829ff, 0 0 21px #b829ff;
+    --box-glow: 0 0 5px #b829ff, 0 0 15px #7b2cff, 0 0 25px #7b2cff;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
+  }
+  
+  body {
+    background-color: var(--dark-bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 20px;
+    background-image: 
+      radial-gradient(circle at 50% 50%, rgba(123, 44, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(184, 41, 255, 0.1) 0%, transparent 40%);
+  }
+  
+  .container {
+    border: 2px solid var(--neon-purple);
+    border-radius: 10px;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: var(--box-glow);
+    background-color: rgba(10, 10, 15, 0.8);
+    animation: borderPulse 3s infinite alternate;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: white;
+    text-shadow: var(--text-glow);
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  #number {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--neon-blue);
+    border-radius: 5px;
+    background-color: rgba(10, 10, 15, 0.6);
+    color: white;
+    font-size: 1.1rem;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  #number:focus {
+    border-color: var(--neon-purple);
+    box-shadow: 0 0 8px var(--neon-purple);
+  }
+  
+  #convert-btn {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background-color: transparent;
+    color: var(--neon-purple);
+    border: 2px solid var(--neon-purple);
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px var(--neon-purple);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #convert-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(184, 41, 255, 0.3),
+      transparent
+    );
+    transition: 0.5s;
+  }
+  
+  #convert-btn:hover::before {
+    left: 100%;
+  }
+  
+  #convert-btn:hover {
+    background-color: var(--neon-purple);
+    color: white;
+    box-shadow: 0 0 10px var(--neon-purple), 0 0 20px var(--neon-purple);
+  }
+  
+  #output {
+    display: block;
+    margin-top: 20px;
+    padding: 15px;
+    width: 100%;
+    min-height: 60px;
+    border: 2px solid var(--neon-blue);
+    border-radius: 5px;
+    background-color: rgba(10, 10, 15, 0.6);
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px var(--neon-purple);
+  }
+  
+  @keyframes borderPulse {
+    0% {
+      box-shadow: 0 0 5px var(--neon-purple), 0 0 15px var(--neon-blue);
+    }
+    100% {
+      box-shadow: 0 0 15px var(--neon-purple), 0 0 25px var(--neon-blue), 0 0 35px var(--neon-blue);
+    }
+  }
+  
+  @keyframes textFlicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+      text-shadow: 0 0 7px var(--neon-purple), 0 0 10px var(--neon-purple), 0 0 21px var(--neon-purple);
+    }
+    20%, 24%, 55% {
+      text-shadow: none;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      width: 95%;
+      padding: 20px;
+    }
+    
+    h1 {
+      font-size: 1.7rem;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .container {
+    animation: fadeIn 1s ease-out forwards, borderPulse 3s infinite alternate;
+  }
